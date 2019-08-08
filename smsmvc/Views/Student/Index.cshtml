@@ -1,0 +1,65 @@
+﻿@model IEnumerable<smsmvc.Models.StudentModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron text-center">
+    <h3>Shop Management System</h3> 
+
+
+</div>
+@*<h2>Index</h2>*@
+
+<div class=" jumbotron">
+ 
+
+    <p>
+       @* @Html.ActionLink("Create New", "Create")*@
+    </p>
+    <table class="table table-bordered table-striped table-hover table-info  " style="font-size:15px;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentMobileNo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentMobileNo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</div>
+<h6><abbr title="Powered by Vedang.">SMS</abbr></h6>
+ 
+
